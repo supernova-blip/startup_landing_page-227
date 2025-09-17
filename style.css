@@ -1,0 +1,270 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+
+  /* 👇 Floating glass effect */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  margin: 10px auto;
+  width: 90%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: #ff4ecd;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #eee;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("music.png.jpg") no-repeat center center/cover;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.cta-btn {
+  margin-top: 15px;
+  background: #111;
+  border: 2px solid #ff4ecd;
+  padding: 12px 28px;
+  color: #ff4ecd;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #ff4ecd;
+  color: #111;
+  box-shadow: 0 0 10px #ff4ecd;
+}
+
+/* Equalizer */
+.equalizer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.equalizer .bar {
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(180deg, #ff4ecd, #00d4ff);
+  border-radius: 6px;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.equalizer .bar:nth-child(1) { animation-delay: 0s; }
+.equalizer .bar:nth-child(2) { animation-delay: 0.3s; }
+.equalizer .bar:nth-child(3) { animation-delay: 0.6s; }
+.equalizer .bar:nth-child(4) { animation-delay: 0.9s; }
+.equalizer .bar:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes bounce {
+  0%, 100% { height: 30px; opacity: 0.6; }
+  50% { height: 80px; opacity: 1; }
+}
+
+/* Features Grid */
+.features {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.feature-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.feature-card h3 {
+  margin: 15px 0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* About */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about img {
+  margin-top: 20px;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+/* Contact */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+.contact button {
+  background: #00d4ff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background: #ff4ecd;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-icons span {
+  font-size: 1.5rem;
+}
+footer {
+  position: relative;
+  z-index: 1000;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  width: 90%;
+}
+.feature-card, form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover, form:hover {
+  transform: translateY(-5px);
+}
